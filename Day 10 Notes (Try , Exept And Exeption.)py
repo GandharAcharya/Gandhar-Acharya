@@ -1,7 +1,0 @@
-num1 =(input("Enter Your Number!!!!"))
-num2 =(input("Enter Your Number!!!!"))
-try:
-    print("Your Answer Is", int(num1)+int(num2))
-
-except Exception as x:
-    print(x)
