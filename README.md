@@ -1,1 +1,1 @@
-# Gandhar-Acharya
+# Gandhar Acharya
