@@ -1,0 +1,114 @@
+import random
+import time
+def SnakeGame():
+    Player_Point = 0
+    Comp_Point = 0
+    print("\n\nWelcome To The Snake Water And Gun Game!!!!")
+    print("\nPress 's' For Snake 'w' For Water 'g' For Gun")
+    print("\tYou Have 5 Lives")
+    print("\n\nNote: Kindly Enter Your Choice In Small Letters Only")
+    Number_Of_Lives = 1
+    while (Number_Of_Lives <= 5):
+        Player= input("\nPlease Enter Your Choice:")
+        ls1= ["Snake", "Water", "Gun"]
+        Comp= random.choice(ls1)
+
+        if Comp=="Snake" and Player=="w":
+            print("The Computer Chose Snake And You Chose Water So Snake Drank All The Water\n")
+            Comp_Point = Comp_Point + 1
+            Player_Point = Player_Point + 0
+            print("Your Score:", Player_Point)
+            print("Computer Score:", Comp_Point)
+
+        elif Comp=="Snake" and Player=="s":
+            print("The Computer Chose Snake And You Chose Snake Too.. Its A Tie\n")
+            Comp_Point = Comp_Point + 0
+            Player_Point = Player_Point + 0
+            print("Your Score:", Player_Point)
+            print("Computer Score:", Comp_Point)
+
+
+        elif Comp=="Snake" and Player=="g":
+            print("The Computer Chose Snake And You Chose Gun So You Killed The Snake With The Gun\n")
+            Comp_Point = Comp_Point + 0
+            Player_Point = Player_Point + 1
+            print("Your Score:", Player_Point)
+            print("Computer Score:", Comp_Point)
+
+        elif Comp == "Water" and  Player=="w":
+            print("The Computer Chose Water And You Chose Water Too... So Its A Tie\n")
+            Comp_Point = Comp_Point + 0
+            Player_Point = Player_Point + 0
+            print("Your Score:", Player_Point)
+            print("Computer Score:", Comp_Point)
+
+
+        elif Comp=="Water" and  Player=="s":
+            print("The Computer Chose Water And You Chose Snake, So Your Snake Drank The Water\n")
+            Comp_Point = Comp_Point + 0
+            Player_Point = Player_Point + 1
+            print("Your Score:", Player_Point)
+            print("Computer Score:", Comp_Point)
+
+        elif Comp=="Water" and  Player=="g":
+            print("The Computer Chose Water And You Chose Gun So, Your Gun Drown Off In The The Water\n")
+            Comp_Point = Comp_Point + 1
+            Player_Point = Player_Point + 0
+            print("Your Score:", Player_Point)
+            print("Computer Score:", Comp_Point)
+
+
+
+        elif Comp=="Gun" and  Player=="w":
+            print("The Computer Chose Gun And You Chose Water So, The Computer's Gun Was Drown In Your Water\n")
+            Comp_Point = Comp_Point + 0
+            Player_Point = Player_Point + 1
+            print("Your Score:", Player_Point)
+            print("Computer Score:", Comp_Point)
+
+        elif Comp=="Gun" and  Player=="s":
+            print("The Computer Chose Gun And You Chose Snake So, Your Snake Was Killed By The Computer's Gun\n")
+            Comp_Point = Comp_Point + 1
+            Player_Point = Player_Point + 0
+            print("Your Score:", Player_Point)
+            print("Computer Score:", Comp_Point)
+
+        elif Comp=="Gun" and  Player=="g":
+            print("The Computer Chose Gun And You Chose Gun Too... So It's A Tie\n")
+            Comp_Point = Comp_Point + 0
+            Player_Point = Player_Point + 0
+            print("Your Score:", Player_Point)
+            print("Computer Score:", Comp_Point)
+
+        else:
+            print("Invalid Input!!!")
+
+
+
+        print(5 - Number_Of_Lives, "Number Of Lives Left!!")
+        Number_Of_Lives = Number_Of_Lives + 1
+        if (Number_Of_Lives > 5):
+            print("\nGame Over!!!")
+
+    print("\nYour Total Score:",Player_Point)
+    print("Computer Total Score:", Comp_Point)
+
+    if Player_Point == Comp_Point:
+        print("\nIts A Tie!!")
+
+    if Player_Point < Comp_Point:
+        print("\nComputer Won!! You Loose")
+
+    if Player_Point > Comp_Point:
+        print("\nYou Won!! Computer Lost")
+
+    a= input("\nPRESS e TO EXIT AND c TO CONTINUE PLAYING AGAIN: ")
+
+    if a=="e":
+        print("\nThank You For Playing!!!! Have A Nice Day")
+        time.sleep(2)
+
+    if a=="c":
+        SnakeGame()
+
+SnakeGame()
